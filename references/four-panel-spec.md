@@ -2,6 +2,15 @@
 
 Apply this specification to the concrete details observed in the user's character image. Write a finished image-generation prompt, not a meta-template.
 
+## Contents
+
+- Output contract
+- Required four-panel composition
+- Character analysis content
+- Background, lighting, and presentation
+- Bottom-heavy preservation block
+- Negative constraints
+
 ## Output Contract
 
 Return only:
@@ -110,5 +119,4 @@ End with a compact but explicit negative block prohibiting:
 - incorrectly mirrored asymmetric details;
 - added or missing props, weapons, logos, or accessories;
 - dynamic poses, wide-angle distortion, duplicate characters within a panel, dramatic backgrounds, text, labels, captions, decorative borders, and watermarks.
-
 

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Character Sheet Prompt Builder"
+  short_description: "Build consistent three-panel character sheet prompts"
+  default_prompt: "Use $build-character-sheet-prompt to analyze my character image and create a production-ready three-panel reference sheet prompt."
+

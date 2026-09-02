@@ -1,6 +1,6 @@
 ---
 name: build-character-sheet-prompt
-description: "Analyze an attached full-body person or character reference image and write a production-ready English prompt for Nano Banana Pro, FLUX, or Midjourney using one of two consistent character-sheet layouts: a default three-panel layout with a face-excluded front neck-to-toe view, complete back view, and close-up portrait; or an optional four-panel layout that adds an exact 90-degree head-to-toe side view. Use for requests such as 캐릭터 시트 프롬프트, 인물 설정 시트, 3패널, 4패널, 3면 또는 4면 캐릭터 레퍼런스, 측면 전신, 의상 정면과 후면, 얼굴 클로즈업, or converting a character image into a reusable image-generation prompt."
+description: "Analyze an attached full-body person or character reference image and write a production-ready English prompt for Nano Banana Pro, FLUX, or Midjourney using one of three consistent character-sheet layouts: a default three-panel layout with a face-excluded front neck-to-toe view, complete back view, and close-up portrait; an optional four-panel layout that adds an exact 90-degree head-to-toe side view; or a modeling-board layout with front, left-side, and back turnarounds, one dominant face close-up, and six material/detail close-ups. Use for requests such as 캐릭터 시트 프롬프트, 인물 설정 시트, 3패널, 4패널, 모델링 시트, 턴어라운드 보드, 3-view turnaround, character modeling reference, 측면 전신, 의상 정면과 후면, 얼굴 클로즈업, or converting a character image into a reusable image-generation prompt."
 ---
 
 # Build Character Sheet Prompt
@@ -15,13 +15,15 @@ Create a prompt from the supplied visual reference; do not generate an image unl
 4. Read the selected reference file completely and apply every mandatory layout, analysis, preservation, and output rule.
 5. Translate the visual evidence into precise production language. Cover identity, proportions, hair, face, skin, every garment layer, footwear, materials, colors, props, weapons, and accessories.
 6. For details hidden in the reference, use the simplest visually consistent continuation. Do not invent prominent new design elements, logos, weapons, or accessories.
-7. Check the final prompt against the checklist below before answering.
+7. Check the final prompt against the checklist below before answering. The English prompt has a hard maximum of 5,000 characters; if multiple layouts are requested, check each English prompt separately.
 
 ## Layout Selection
 
 - Use the **default three-panel mode** when the user asks for a character sheet without specifying a panel count, or explicitly requests three panels. Read [references/three-panel-spec.md](references/three-panel-spec.md) only.
 - Use the **optional four-panel mode** when the user explicitly requests four panels, a side-view panel, 측면 포함, 측면 전신, or an exact 90-degree profile. Read [references/four-panel-spec.md](references/four-panel-spec.md) only.
-- If the user asks for both versions, produce the three-panel prompt first and the four-panel prompt second, clearly separated, while preserving all shared character details. Otherwise output only the selected layout.
+- Use the **optional modeling-board mode** when the user requests a character modeling sheet, character design board, fashion design reference page, turnaround board, 3-view turnaround, front/side/back views plus a facial close-up and six detail close-ups, 모델링 시트, 턴어라운드 보드, or 디테일 그리드. Read [references/modeling-board-spec.md](references/modeling-board-spec.md) only.
+- In modeling-board mode, the three turnaround figures include their complete heads and faces. Do not import the face-excluded left-panel rule from three-panel mode.
+- If the user asks for multiple layouts, produce each requested prompt in a clearly separated section, preserving shared character details and applying the 5,000-character limit to each English prompt. If no order is specified, use three-panel, four-panel, then modeling-board order. Otherwise output only the selected layout.
 
 ## Framing Priority
 
@@ -38,8 +40,11 @@ Verify that the output:
 - contains a single English image-generation prompt in one clean code block;
 - contains no placeholders or unfilled brackets;
 - explicitly states every mandatory panel and the correct order for the selected layout;
+- for modeling-board mode, explicitly states the three full-body turnaround views, one dominant upper-right facial close-up, and six lower-right detail images in a clean grid;
 - makes identity, proportions, clothing construction, colors, accessories, lighting, and rendering identical across all panels;
 - places the strongest preservation and negative constraints near the bottom of the English prompt;
 - uses a neutral light grey studio background and soft studio product lighting with subtle foot contact shadows;
 - ends with only a concise two- or three-sentence Korean summary after the code block.
+
+If the draft exceeds 5,000 characters, compress repeated descriptions, generic adjectives, and redundant negative wording before answering. Never exceed the limit or remove a mandatory layout rule, exact required sentence, core identity/clothing detail, preservation block, or essential negative constraint to shorten it.
 

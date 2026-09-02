@@ -18,6 +18,8 @@ Return only:
 1. One production-ready English prompt in a clean copyable code block.
 2. A two- or three-sentence Korean summary covering the character's key identity and outfit details, the left-panel face-exclusion rule, and the exact 90-degree side-view rule.
 
+The English prompt must be 5,000 characters or fewer, counting letters, spaces, punctuation, and line breaks inside the prompt but excluding code-fence markers and the Korean summary. Target approximately 4,500–4,800 characters. If the draft is too long, compress repeated details and generic adjectives while preserving every mandatory composition rule, exact required sentence, core identity and outfit evidence, preservation block, and essential negative constraint.
+
 Do not add headings, analysis notes, caveats, alternatives, placeholders, or setup instructions outside those two items.
 
 ## Required Composition
